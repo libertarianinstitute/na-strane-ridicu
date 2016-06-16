@@ -9,6 +9,7 @@
 # Baseurl = name of github repository linked to libertarianinstitute account
 #
 #
+projname: Template
 title: Libertariani.cz - template
 email: michal.kurz@libertariani.cz
 description: > # this means to ignore newlines until "baseurl:"
