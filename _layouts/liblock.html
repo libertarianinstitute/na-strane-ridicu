@@ -1,0 +1,79 @@
+<!doctype htmli>
+<title>Na této stránce právě pracujeme</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="{{"/liblock/md5.js"|prepend:site.baseurl}}"></script>
+
+
+<style>
+	body {background-color: #eee;}
+	#logo{
+		width: 502px;
+		margin: 0px auto;
+	}
+	
+	#text{
+		color: #232369;
+		font-size: 55px;
+		line-height: 75px;
+		margin: 8px auto; 
+		font-weight: bold;
+		text-align:center;
+		font-family: sans-serif;
+	}
+
+	#app{
+		width: 300px;
+		margin: 0px auto;
+	}
+	.inv{
+		display: none !important;
+	}
+	#par{
+		margin: 0px;
+	}
+	.dummy {
+
+	}
+</style>
+
+<body>
+	
+	<div id="content">
+		<div id="logo"><img src="{{"/liblock/logo.png"|prepend:site.baseurl}}" height="500px" width="500px"></div>
+	
+		<div id="text">
+			<p id="par">Tuto stránku pro vás teprve připravujeme.<br>
+			Její spuštění předpokládáme 1.2.3456</p>
+		</div>
+	</div>	
+
+	<div id="app" class="inv">
+		<input type="password" id="pass"> 
+		<input type="button" id="b" value="GO">
+		
+
+	</div>		
+
+			
+		
+
+
+	<script>	    			
+		document.getElementById("logo").onclick = function() {
+    			document.getElementById("app").className = "dummy"; 		
+		};
+		
+		document.getElementById("b").onclick = function() {
+			var pwhash = "e16f85493cf4d3c525101c3c2191110e";
+    			var pwatt = $("#pass").val();
+			var hashatt = $.md5(pwatt);
+			 
+			if( hashatt === pwhash) {
+    				window.location.replace("{{"/home.html"|prepend:site.baseurl}}");   
+    			}
+		
+		};
+	</script>
+</body>
+
+{{content}}
