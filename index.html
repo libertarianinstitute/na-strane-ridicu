@@ -1,4 +1,79 @@
-<!DOCTYPE html>
+<!doctype htmli>
+<title>Na této stránce právě pracujeme</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="/template/liblock/md5.js"></script>
+
+
+<style>
+	body {background-color: #eee;}
+	#logo{
+		width: 502px;
+		margin: 0px auto;
+	}
+	
+	#text{
+		color: #232369;
+		font-size: 55px;
+		line-height: 75px;
+		margin: 8px auto; 
+		font-weight: bold;
+		text-align:center;
+		font-family: sans-serif;
+	}
+
+	#app{
+		width: 300px;
+		margin: 0px auto;
+	}
+	.inv{
+		display: none !important;
+	}
+	#par{
+		margin: 0px;
+	}
+	.dummy {
+
+	}
+</style>
+
 <body>
-<head><meta charser="utf-8"/><meta http-eqiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="pageexcerptHERE"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"/><link rel="stylesheet" href="/template/css/main.css"/><link rel="canonical" href="http://www.zdvojenaadresa.abc"/></head><header id="site-header"><div id="top-banner"><div class="wrapper">Site header</div></div><div class="navtainer"> <div class="wrapper"><nav id="top-nav"><div class="nitem" id="home" onclick="window.location.replace('./index.html')">Home</div><div class="nitem" id="vydelat" onclick="window.location.replace('./page1.html')">Page 1 </div><div class="nitem" id="naklad" onclick="window.location.replace('./page2.html')">Page 2</div><div class="nitem" id="dostaneme" onclick="window.location.replace('./page3.html')">Page 3 </div></nav></div></div></header><div class="wrapper"><div id="content"><h2>Content goes in here	 		</h2><div class="placeholder">placeholder</div><div class="detail">detail</div></div></div>
+	
+	<div id="content">
+		<div id="logo"><img src="/template/liblock/logo.png" height="500px" width="500px"></div>
+	
+		<div id="text">
+			<p id="par">Tuto stránku pro vás teprve připravujeme.<br>
+			Její spuštění předpokládáme 1.2.3456</p>
+		</div>
+	</div>	
+
+	<div id="app" class="inv">
+		<input type="password" id="pass"> 
+		<input type="button" id="b" value="GO">
+		
+
+	</div>		
+
+			
+		
+
+
+	<script>	    			
+		document.getElementById("logo").onclick = function() {
+    			document.getElementById("app").className = "dummy"; 		
+		};
+		
+		document.getElementById("b").onclick = function() {
+			var pwhash = "e16f85493cf4d3c525101c3c2191110e";
+    			var pwatt = $("#pass").val();
+			var hashatt = $.md5(pwatt);
+			 
+			if( hashatt === pwhash) {
+    				window.location.replace("/template/home.html");   
+    			}
+		
+		};
+	</script>
 </body>
+
+
