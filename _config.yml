@@ -10,6 +10,14 @@
 #
 #
 projname: Template
+projgoal: >
+        Cílem projektu je template stránek AngularJS History AngularJS version 1.0 was released in 2012. Miško Hevery, a Google employee, started to work with AngularJS in 2009. The idea turned out very well, and the project is now officially supported by Google. AngularJS Examples W3Schools' AngularJS tutorial contains lots of AngularJS examples! AngularJS Example
+muzetesetesitna: >
+        <ul>
+        <li>nečekaná odhalení, která vás zaručeně zvednou ze židle;</li>
+        <li>užitečné informace, které nikde jinde nenajdete;</li>
+        <li>vtipné grafiky, které vás přimějí se zamyslet</li>
+        </ul>
 title: Libertariani.cz - template
 email: michal.kurz@libertariani.cz
 description: > # this means to ignore newlines until "baseurl:"
