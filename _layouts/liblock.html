@@ -1,6 +1,5 @@
-	<!doctype htmli>
+	<!doctype html>
 <title>Na této stránce právě pracujeme</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="{{"/liblock/md5.js"|prepend:site.baseurl}}"></script>
 <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 
@@ -63,7 +62,7 @@
 	<div id="content">
 	
 		<div id="text">
-			<p id="par">Na tomto webu pro vás připravujeme projekt <span class="liblue"> {{site.projname}}</span>.</p>
+			<p id="par">Na tomto webu pro vás připravujeme projekt <span id="locker" class="liblue"> {{site.projname}}</span>.</p>
 		</div>
 			<p id="projgoal">{{site.projgoal}}</p>
 	
@@ -76,25 +75,32 @@
 		<p>Ve zprávě pro příjemce prosím uveďte, že si chcete, abychom příspěvek použili na projekt {{site.projname}} </p>
 		<p>Pokud máte další nápady, jak pomoci našemu projektu, případně se chcete na něco zeptat, využijte našeho kontaktního formuláře:</p>
 <iframe id="iframe" frameborder="0" height=" 800px" src="http://www.libertarianskyinstitut.cz/cs/outform/"><<!-- FUCK --></iframe>	
+	<div id="app" class="inv">
+		<input type="password" id="pass"> 
+		<input type="button" id="b" value="GO">
+		
+
+	</div>
 	</div>	
 
 
 	<script>	    			
-		/*document.getElementById("logo").onclick = function() {
-    			document.getElementById("app").className = "dummy"; 		
+		document.getElementById("locker").onclick = function() {
+    			$("#iframe").hide();
+			document.getElementById("app").className = "dummy"; 		
 		};
 		
 		document.getElementById("b").onclick = function() {
 			var pwhash = "e16f85493cf4d3c525101c3c2191110e";
     			var pwatt = $("#pass").val();
-			var hashatt = $.md5(pwatt);
+			var hashatt = md5(pwatt);
 			 
 			if( hashatt === pwhash) {
     				window.location.replace("{{"/home.html"|prepend:site.baseurl}}");   
     			}
 		
 		};
-		*/
+		
 	
 
 	</script>

@@ -1,10 +1,10 @@
-<!doctype htmli>
+	<!doctype html>
 <title>Na této stránce právě pracujeme</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="/template/liblock/md5.js"></script>
-
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 
 <style>
+	
 	#content{
 		width: 1080px;
 		margin: 0px auto;
@@ -24,8 +24,10 @@
 		text-align:justify;
 	}
 	#iframe{
+		overflow:hidden;
+		
 		width: 1080px;
-		height: 1000px;
+		height: 800px;
 	}
 	#projgoal{
 		font-size: 20px;
@@ -60,7 +62,7 @@
 	<div id="content">
 	
 		<div id="text">
-			<p id="par">Na tomto webu pro vás připravujeme projekt <span class="liblue"> Template</span>.</p>
+			<p id="par">Na tomto webu pro vás připravujeme projekt <span id="locker" class="liblue"> Template</span>.</p>
 		</div>
 			<p id="projgoal">Cílem projektu je template stránek AngularJS History AngularJS version 1.0 was released in 2012. Miško Hevery, a Google employee, started to work with AngularJS in 2009. The idea turned out very well, and the project is now officially supported by Google. AngularJS Examples W3Schools' AngularJS tutorial contains lots of AngularJS examples! AngularJS Example
 </p>
@@ -70,34 +72,39 @@
 
 			
 		
-		<div class="lihe">Jak nás můžete podpořit:</div>
-		<p>Můžete nám přispět na náš <a href="https://www.fio.cz/ib2/transparent?a=2800929423"><span class="liblue">transparentní účet<span class="bold"> č. 2800929423/2010</span></span></a></p>
-		<p>Ve zprávě pro příjemce prosím uveďte, že si přejete podpořit právě projekt Template </p>
+		<div class="lihe">Jak nám můžete pomoci: </div>
+		<p>Můžete poslat příspěvěk na transparentní účet Libertariánského insitutu <a href="https://www.fio.cz/ib2/transparent?a=2800929423"><span class="liblue">transparentní účet<span class="bold"> č. 2800929423/2010</span></span></a></p>
+		<p>Ve zprávě pro příjemce prosím uveďte, že si chcete, abychom příspěvek použili na projekt Template </p>
 		<p>Pokud máte další nápady, jak pomoci našemu projektu, případně se chcete na něco zeptat, využijte našeho kontaktního formuláře:</p>
-		<iframe id="iframe" src="http://www.libertarianskyinstitut.cz/cs/kontakt/#primary"><!-- FUCK --></iframe>
-		<div id="app" class="inv">
-			<input type="password" id="pass"> 
-			<input type="button" id="b" value="GO">
-		</div>		
+<iframe id="iframe" frameborder="0" height=" 800px" src="http://www.libertarianskyinstitut.cz/cs/outform/"><<!-- FUCK --></iframe>	
+	<div id="app" class="inv">
+		<input type="password" id="pass"> 
+		<input type="button" id="b" value="GO">
 		
+
+	</div>
 	</div>	
 
 
 	<script>	    			
-		document.getElementById("logo").onclick = function() {
-    			document.getElementById("app").className = "dummy"; 		
+		document.getElementById("locker").onclick = function() {
+    			$("#iframe").hide();
+			document.getElementById("app").className = "dummy"; 		
 		};
 		
 		document.getElementById("b").onclick = function() {
 			var pwhash = "e16f85493cf4d3c525101c3c2191110e";
     			var pwatt = $("#pass").val();
-			var hashatt = $.md5(pwatt);
+			var hashatt = md5(pwatt);
 			 
 			if( hashatt === pwhash) {
     				window.location.replace("/template/home.html");   
     			}
 		
 		};
+		
+	
+
 	</script>
 </body>
 
